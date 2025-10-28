@@ -44,11 +44,10 @@ do
                 opcion=Convert.ToInt32(Console.ReadLine());  
    
 
-    // 3. Usar un switch para manejar la opción
     switch (opcion)
     {
         case 1:
-            // Lógica para agregar cuenta...
+            AgregarNuevaCuenta(miBanco);
             break;
         case 2:
             // Lógica para eliminar cuenta...
@@ -107,12 +106,12 @@ do
                 	string[] partes= linea.Split(',');
                 	Cliente nuevoCliente = new Cliente(partes[0], partes[1], partes[2],partes[3], partes[4], partes[5]);
                 	miBanco.AgregarCliente(nuevoCliente);
-                    List<Cliente> listaParaMostrar = miBanco.TodosLosClientes();
+                    
                 }
                 
              }
                     Console.WriteLine("Clientes cargados.");
-               
+               List<Cliente> listaParaMostrar = miBanco.TodosLosClientes();
               }
                else
               {
@@ -134,7 +133,7 @@ do
                 	string[] partes= linea.Split(',');
                 	try // Añadido para capturar error si el saldo no es un número
                     {
-                	 double saldoInicial = double.Parse(partes[4]);
+                	 double saldoInicial = double.Parse(partes[5]);
                 	
                 	Cuenta nuevaCuenta= new Cuenta(partes[0], partes[1], partes[2],partes[3], saldoInicial);
                 	
@@ -173,7 +172,104 @@ do
             Console.WriteLine("8.Transferir dinero"); 
 		    Console.WriteLine("9.Salir");
 		}
-		
+        
+        public static void AgregarNuevaCuenta(Banco miBanco) 
+        {   Console.Clear(); // Limpia la consola para esta operación
+            Console.WriteLine("\n--- Agregar Nueva Cuenta ---");
+            Console.Write("Ingrese DNI del titular: ");
+            string dniTitular = Console.ReadLine();
+            
+            //buscar si cliente existe
+            Cliente clienteExistente = miBanco.BuscarClientePorDNI(dniTitular);
+            
+            string nombreTitular;
+            string apellidoTitular;
+            string direccionTitular;
+            string telefonoTitular;
+            string mailTitular;
+            
+            //si no existe
+            
+            if (clienteExistente == null)
+            {     Console.WriteLine("Cliente no encontrado. Se creará uno nuevo.");
+                  Console.Write("Ingrese Nombre del titular: ");
+                  nombreTitular = Console.ReadLine();
+                  Console.Write("Ingrese Apellido del titular: ");
+                  apellidoTitular = Console.ReadLine();
+                  Console.Write("Ingrese Dirección del titular: ");
+                  direccionTitular= Console.ReadLine();
+                  Console.Write("Ingrese telefono del titular: ");
+                  telefonoTitular = Console.ReadLine();
+                  Console.Write("Ingrese Mail del titular: ");
+                  mailTitular = Console.ReadLine();
+                       
+                  
+                  // Crear y agregar nuevo cliente
+                   Cliente nuevoCliente = new Cliente(nombreTitular, apellidoTitular, dniTitular, direccionTitular,telefonoTitular,mailTitular );
+                   miBanco.AgregarCliente(nuevoCliente);
+                  Console.WriteLine("Cliente " +nombreTitular+" "+ apellidoTitular+ " "+ " agregado.");
+                 
+            }else  {
+       
+                  nombreTitular = clienteExistente.NombreCliente;
+                  apellidoTitular = clienteExistente.ApellidoCliente;
+                  Console.WriteLine("Cliente encontrado:"+nombreTitular+" "+ apellidoTitular+ ".");
+                                   
+    }
+            // Pedir Datos para la Cuenta
+               Console.Write("Ingrese Número de la nueva cuenta: ");
+               string numeroCuenta = Console.ReadLine();
+               
+             double montoDeposito = 0;
+        bool montoValido = false;
+
+        while (!montoValido)
+        {
+            Console.Write("Ingrese Monto del depósito inicial (positivo): ");
+            string iDeposito = Console.ReadLine(); // Lee la entrada
+
+            try // Intenta convertir y validar
+            {
+                // PASO 1: Intenta convertir usando Parse()
+                montoDeposito = double.Parse(iDeposito);
+
+                // PASO 2: Si la conversión funcionó, verifica si es positivo
+                if (montoDeposito > 0)
+                {
+                    montoValido = true; // ¡Válido! Salimos del while.
+                }
+                else
+                {
+                    // Es un número, pero no positivo (0 o negativo).
+                    Console.WriteLine("Monto inválido. Debe ser un número positivo.");
+                    // montoValido sigue false, el while repetirá.
+                }
+            }
+            catch (FormatException) 
+            {
+                // La conversión falló.
+                Console.WriteLine("Entrada inválida. Por favor, ingrese un número.");
+                // montoValido sigue false, el while repetirá.
+            }
+            // También podría haber otros errores (OverflowException),
+            // pero FormatException es el más común aquí.
+        }
+       
+        
+        Cuenta nuevaCuenta = new Cuenta(numeroCuenta, nombreTitular, apellidoTitular, dniTitular, montoDeposito);
+
+        miBanco.AgregarCuenta(nuevaCuenta);
+
+        // Muestra el mensaje de éxito SI TODO LO ANTERIOR FUNCIONÓ
+        Console.WriteLine("Creación de cuenta exitosa.");
+        Console.WriteLine("\nPresione una tecla para volver al menú...");
+        Console.ReadKey(); 
+    
+      
+       
+    }
+        
 		
 	}
-}
+	
+	}
