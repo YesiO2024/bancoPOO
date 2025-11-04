@@ -5,3 +5,17 @@ C:\Users\Compumar\Desktop\trabojoFinalPoo\tp.final\tp.final\bin\Debug\tp.final.p
 C:\Users\Compumar\Desktop\trabojoFinalPoo\tp.final\tp.final\obj\Debug\tp.final.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\trabojoFinalPoo\tp.final\tp.final\obj\Debug\tp.final.exe
 C:\Users\Compumar\Desktop\trabojoFinalPoo\tp.final\tp.final\obj\Debug\tp.final.pdb
+C:\Users\EBustos\OneDrive - FARMAPLUS\Escritorio\clon\bancoPOO\bin\Debug\clientes.csv
+C:\Users\EBustos\OneDrive - FARMAPLUS\Escritorio\clon\bancoPOO\bin\Debug\cuentas.csv
+C:\Users\EBustos\OneDrive - FARMAPLUS\Escritorio\clon\bancoPOO\bin\Debug\tp.final.exe
+C:\Users\EBustos\OneDrive - FARMAPLUS\Escritorio\clon\bancoPOO\bin\Debug\tp.final.pdb
+C:\Users\EBustos\OneDrive - FARMAPLUS\Escritorio\clon\bancoPOO\obj\Debug\tp.final.csprojResolveAssemblyReference.cache
+C:\Users\EBustos\OneDrive - FARMAPLUS\Escritorio\clon\bancoPOO\obj\Debug\tp.final.exe
+C:\Users\EBustos\OneDrive - FARMAPLUS\Escritorio\clon\bancoPOO\obj\Debug\tp.final.pdb
+G:\Mi unidad\Cosas importantes Eze\Ingeniería informatica\Programacion Orientada a Objetos\TPfinal chat\bancoPOO\bin\Debug\clientes.csv
+G:\Mi unidad\Cosas importantes Eze\Ingeniería informatica\Programacion Orientada a Objetos\TPfinal chat\bancoPOO\bin\Debug\cuentas.csv
+G:\Mi unidad\Cosas importantes Eze\Ingeniería informatica\Programacion Orientada a Objetos\TPfinal chat\bancoPOO\bin\Debug\tp.final.exe
+G:\Mi unidad\Cosas importantes Eze\Ingeniería informatica\Programacion Orientada a Objetos\TPfinal chat\bancoPOO\bin\Debug\tp.final.pdb
+G:\Mi unidad\Cosas importantes Eze\Ingeniería informatica\Programacion Orientada a Objetos\TPfinal chat\bancoPOO\obj\Debug\tp.final.csprojResolveAssemblyReference.cache
+G:\Mi unidad\Cosas importantes Eze\Ingeniería informatica\Programacion Orientada a Objetos\TPfinal chat\bancoPOO\obj\Debug\tp.final.exe
+G:\Mi unidad\Cosas importantes Eze\Ingeniería informatica\Programacion Orientada a Objetos\TPfinal chat\bancoPOO\obj\Debug\tp.final.pdb
